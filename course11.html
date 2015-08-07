@@ -1,0 +1,692 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>Fluids</title>
+<style type="text/css">
+<!--
+.style2 {font-family: "Times New Roman", Times, serif; font-size: 18px; }
+.style4 {
+	color: #0000FF;
+	font-weight: bold;
+	font-size: 12;
+}
+.style5 {font-size: 12}
+.style8 {font-size: 12; color: #666666; }
+.style9 {color: #000000; font-weight: bold; font-size: 16px; }
+-->
+</style>
+</head>
+
+<body>
+<h1 class="style2"> 流体力学</h1>
+<p class="style5">2012 秋季学期,工程力学系103人</p>
+<p class="style5">课本：流体力学，第2版，周光炯等，高等教育出版社</p>
+<p class="style5">考核：20%平时作业+30%期中考试+50%期末考试</p>
+<table width="700" border="1">
+  <tr bgcolor="#FFCC66">
+    <td class="style5">Lecture</td>
+    <td class="style5">Date</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5">Assignment</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td width="50" class="style5">1</td>
+    <td width="69" bgcolor="#FFFFFF" class="style5">9.4</td>
+    <td width="362" bgcolor="#FFFFFF" class="style5">课程介绍、粘性、表面张力</td>
+    <td width="191" bgcolor="#FFFFFF" class="style5">&nbsp;</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td class="style5">2</td>
+    <td bgcolor="#FFFFFF" class="style5">9.7</td>
+    <td bgcolor="#FFFFFF" class="style5">随体导数、拉格朗日及欧拉描述方法</td>
+    <td bgcolor="#FFFFFF" class="style5">&nbsp;</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td class="style5">3</td>
+    <td bgcolor="#FFFFFF" class="style5">9.11</td>
+    <td bgcolor="#FFFFFF" class="style5">运动分解，本构关系</td>
+    <td bgcolor="#FFFFFF" class="style5">1.10,1.18,1.22，1.30</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td class="style5">4</td>
+    <td bgcolor="#FFFFFF" class="style5">9.14</td>
+    <td bgcolor="#FFFFFF" class="style5">流体平衡1</td>
+    <td bgcolor="#FFFFFF" class="style5">&nbsp;</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td class="style5">5</td>
+    <td bgcolor="#FFFFFF" class="style5">9.18</td>
+    <td bgcolor="#FFFFFF" class="style5">流体平衡2</td>
+    <td bgcolor="#FFFFFF" class="style5">&nbsp;</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td class="style5">6</td>
+    <td bgcolor="#FFFFFF" class="style5">9.21</td>
+    <td bgcolor="#FFFFFF" class="style5">流体运动基本方程组1</td>
+    <td bgcolor="#FFFFFF" class="style5">&nbsp;</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td class="style5">7</td>
+    <td bgcolor="#FFFFFF" class="style5">9.25</td>
+    <td bgcolor="#FFFFFF" class="style5">流体运动基本方程组2</td>
+    <td bgcolor="#FFFFFF" class="style5">2.5,2.6,2.8,2.14</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td class="style5">8</td>
+    <td bgcolor="#FFFFFF" class="style5">9.28</td>
+    <td bgcolor="#FFFFFF" class="style5">流体运动基本方程组3</td>
+    <td bgcolor="#FFFFFF" class="style5">&nbsp;</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td class="style5">9</td>
+    <td bgcolor="#FFFFFF" class="style5">10.9</td>
+    <td bgcolor="#FFFFFF" class="style5">流体运动基本方程组4，能量方程</td>
+    <td bgcolor="#FFFFFF" class="style5">&nbsp;</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td class="style5">10</td>
+    <td bgcolor="#FFFFFF" class="style5">10.12</td>
+    <td bgcolor="#FFFFFF" class="style5">习题课，Fluent演示</td>
+    <td bgcolor="#FFFFFF" class="style5">&nbsp;</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td class="style5">11</td>
+    <td bgcolor="#FFFFFF" class="style5">10.16</td>
+    <td bgcolor="#FFFFFF" class="style5">积分关系及其应用1, 伯努利方程</td>
+    <td bgcolor="#FFFFFF" class="style5">3.8,3.21,4.13,4.16,4.25</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td class="style5">12</td>
+    <td bgcolor="#FFFFFF" class="style5">10.19</td>
+    <td bgcolor="#FFFFFF" class="style5">积分关系及其应用2，动量矩方程，综合应用</td>
+    <td bgcolor="#FFFFFF" class="style5"><p><a href="2012courseupload/assign_1.pdf">作业1-3 答案</a></p>
+    <p>&nbsp;</p></td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td class="style5">13</td>
+    <td bgcolor="#FFFFFF" class="style5">10.23</td>
+    <td bgcolor="#FFFFFF" class="style5">涡旋运动1 涡量方程、涡线、涡管、开尔文、亥姆霍兹定理</td>
+    <td bgcolor="#FFFFFF" class="style5"><a href="Vorticity_Part_1.rm">资料片</a></td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td class="style5">14</td>
+    <td bgcolor="#FFFFFF" class="style5">10.26</td>
+    <td bgcolor="#FFFFFF" class="style5"><p>期中考试，下午1:30-15:05，综合教学楼 综158 </p>
+    <p><a href="http://202.118.74.190/~ngao/passpapers2012/&amp;">试题</a>,<a href="2012courseupload/midterm_solution.pdf">部分答案</a>, <a href="2012courseupload/cj_kccj.pdf">成绩</a></p></td>
+    <td bgcolor="#FFFFFF" class="style5">例题<a href="2012mid_exc/3-58.jpg">1</a>,<a href="2012mid_exc/3-69.jpg">2</a>,<a href="2012mid_exc/3-100a.jpg">3a</a>,<a href="2012mid_exc/3-100b.jpg">3b</a>,<a href="2012mid_exc/4-71.jpg">4</a>,<a href="2012mid_exc/4-84a.jpg">5a</a>,<a href="2012mid_exc/4-84b.jpg">5b</a>,<a href="2012mid_exc/6-58.jpg">6</a> 答案<a href="2012mid_exc/3-58.pdf">1</a>,<a href="2012mid_exc/3-69.pdf">2</a>,<a href="2012mid_exc/3-100.pdf">3</a>,<a href="2012mid_exc/4-71.pdf">4</a>,<a href="2012mid_exc/4-84.pdf">5</a>,<a href="2012mid_exc/6-58.pdf">6</a></td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td class="style5">15</td>
+    <td bgcolor="#FFFFFF" class="style5">10.30</td>
+    <td bgcolor="#FFFFFF" class="style5">涡旋运动2 涡感生速度场、涡线、点涡</td>
+    <td bgcolor="#FFFFFF" class="style5">&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF" class="style5">16</td>
+    <td class="style5">11.2</td>
+    <td class="style5">无粘不可压的无旋运动1 速度势、流函数、复势</td>
+    <td class="style5">5.16， 5.17， 6.7， 6.11(1,2) </td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF" class="style5">17</td>
+    <td class="style5">11.6</td>
+    <td class="style5">无粘不可压的无旋运动2 源、汇、偶极子、点涡的复势，圆柱扰流</td>
+    <td class="style5">&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF" class="style5">18</td>
+    <td class="style5">11.9</td>
+    <td class="style5">无粘不可压的无旋运动3 马格努斯效应，茹科斯基公式，镜像法，    <a href="http://www.diam.unige.it/%7Eirro/java/conformi1_1.html">Kutta-Joukowski 变换演示网址</a></td>
+    <td class="style5">6.20， 6.27 </td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF" class="style5">19</td>
+    <td class="style5">11.13</td>
+    <td class="style5">层流运动1，泊肃叶，库尔特流动，管流，雷诺数</td>
+    <td class="style5">&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF" class="style5">20</td>
+    <td class="style5">11.16</td>
+    <td class="style5">层流运动2 相似率,<a href="http://202.118.74.190/~ngao/&amp;">slides</a></td>
+    <td class="style5">&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF" class="style5">21</td>
+    <td class="style5">11.20</td>
+    <td class="style5">层流运动3 层流边界层</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/&amp;">作业</a>，11月30日交</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF" class="style5">22</td>
+    <td class="style5">11.23</td>
+    <td class="style5">湍流运动1 雷诺平均，<a href="Turbulence_L3.ppt">湍流模型</a></td>
+    <td class="style5">&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF" class="style5">23</td>
+    <td class="style5">11.27</td>
+    <td class="style5">湍流运动2 穆迪图和管路计算 <a href="chinese1.pdf">课件</a></td>
+    <td class="style5">&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF" class="style5">24</td>
+    <td class="style5">11.30</td>
+    <td class="style5">专题：<a href="2012courseupload/model&#32;rockets.ppt">火箭</a>，<a href="2012courseupload/02_space_exploration_9-13.pdf">火箭之父</a></td>
+    <td class="style5">&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF" class="style5">25</td>
+    <td class="style5">12.4</td>
+    <td class="style5">湍流运动3 湍流边界层，边界层分离，专题：<a href="http://202.118.74.190/~ngao/&amp;">阻力</a></td>
+    <td class="style5">&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF" class="style5">26</td>
+    <td class="style5">12.7</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/&amp;">习题课</a>，<a href="2012courseupload/solution_xiti.pdf">答案</a></td>
+    <td class="style5">&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF" class="style5">27</td>
+    <td class="style5">12.11</td>
+    <td class="style5"><a href="2012courseupload/thermo_intro.pdf">理想气体的热力学关系</a></td>
+    <td class="style5">&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF" class="style5">28</td>
+    <td class="style5">12.14</td>
+    <td class="style5">气动力学1</td>
+    <td class="style5">9.8, 9.17, 10.2, </td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF" class="style5">29</td>
+    <td class="style5">12.18</td>
+    <td class="style5">气动力学2</td>
+    <td class="style5"><a href="2012courseupload/assignment_zhang.pdf">作业4-6答案,感谢张君茹同学</a></td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF" class="style5">30</td>
+    <td class="style5">12.21</td>
+    <td class="style5">气动力学3</td>
+    <td class="style5">&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF" class="style5">31</td>
+    <td class="style5">12.25</td>
+    <td class="style5">气动力学4</td>
+    <td class="style5">&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF" class="style5">32</td>
+    <td class="style5">12.28</td>
+    <td class="style5">总结</td>
+    <td class="style5">&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF" class="style5">&nbsp;</td>
+    <td class="style5">1.6周日</td>
+    <td class="style5"><p>期末考试 13:30-15:10 综合教学1号楼综253</p>
+    <p>以往考试试题<a href="http://202.118.74.190/~ngao/passpapers2012/2008&amp;">1</a>， <a href="http://202.118.74.190/~ngao/passpapers2012/2008&amp;">1solution</a>,<a href="http://202.118.74.190/~ngao/passpapers2012/&amp;">2</a>,<a href="http://202.118.74.190/~ngao/passpapers2012/&amp;">4</a>,<a href="http://202.118.74.190/~ngao/passpapers2012/&amp;">5</a>,<a href="http://202.118.74.190/~ngao/passpapers2012/&amp;">6</a>，<a href="http://202.118.74.190/~ngao/passpapers2012/&amp;">7</a>。请注意，部分试题不在本次考试范围内。</p></td>
+    <td class="style5"><a href="2012courseupload/2012fluids_finalA.pdf">试题、答案</a></td>
+  </tr>
+</table>
+<p class="style9"><a href="http://202.118.74.190/~ngao/2012courseupload/&amp;"><img src="2012courseupload/IMG_8264_resizeb.jpg" width="197" height="181">水火箭活动照片打包</a></p>
+<p class="style4"><a href="2012courseupload/IMG_8352.jpg"><img src="2012courseupload/IMG_8352_resize_resize.jpg" width="112" height="75" border="0"></a></p>
+<p class="style4"><a href="2012courseupload/IMG_8358.jpg"><img src="2012courseupload/IMG_8358_resize_resize.jpg" width="112" height="75" border="0"></a></p>
+<p class="style4"><a href="2012courseupload/IMG_8359.jpg"><img src="2012courseupload/IMG_8359_resize_resize.jpg" width="112" height="75" border="0"></a></p>
+<p class="style4">FLUENT作业细则</p>
+<p class="style5">1. 人数：每队1人。</p>
+<p class="style5">2. 自行下载安装FLUENT软件，</p>
+<p class="style5">3. 自行选题，要求通过计算一系列不同参数条件下流场的变化来研究一个问题，</p>
+<p class="style5">4. 提交报告，详细论述问题的背景，建模过程中所做的简化，湍流模型的选择，计算结果的比较以及结论。报告内须有队员小幅照片。</p>
+<p class="style5">5. 报告提交时间：2012-12-28，将电子版通过邮件形式寄给老师</p>
+<p class="style5">6. 不需要报名</p>
+<p class="style5">7. 作假必究！</p>
+<p class="style5">已收到报告</p>
+<table width="405" border="0">
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td width="26" class="style5">&nbsp;</td>
+    <td width="78" class="style5">&nbsp;</td>
+    <td width="287" class="style5">报告</td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">1</td>
+    <td class="style5">姜人伟</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/fluent2012report/&amp;">汽车尾翼对汽车气动性的影响</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">2</td>
+    <td class="style5">崔伟</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/fluent2012report/&amp;">关于高尔夫压差阻力的研究</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">3</td>
+    <td class="style5">白镇墉</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/fluent2012report/&amp;">Fluent 学习过程及机翼算例</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">4</td>
+    <td class="style5">李雪琪</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/fluent2012report/&amp;">突扩管内流体流动分析</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">5</td>
+    <td class="style5">林祺亮</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/fluent2012report/&amp;">三维导弹气动特性分析</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">6</td>
+    <td class="style5">陈漂游</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/fluent2012report/&amp;">关于公交车客流作用力的研究</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">7</td>
+    <td class="style5">宋海滨</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/fluent2012report/&amp;">粘性流体通过圆管弯头段的三维流动</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">8</td>
+    <td class="style5">白志同</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/fluent2012report/fluent&amp;">机翼周围流场计算</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">9</td>
+    <td class="style5">倪一文</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/fluent2012report/fluent&amp;">弯头处开口对减小pressure和稳定velocity的探讨</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">10</td>
+    <td class="style5">马有昕</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/fluent2012report/&amp;">利用Fluent解决的几个问题</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">11</td>
+    <td class="style5">张勇</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/fluent2012report/&amp;">三角翼的可压缩外部绕流</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">12</td>
+    <td class="style5">袁力</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/fluent2012report/&amp;">二维非对称性离心泵的压力以及流场速度的分析</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">13</td>
+    <td class="style5">李浩</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/fluent2012report/&amp;">防弯器流场受力分析</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">14</td>
+    <td class="style5">王光明</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/fluent2012report/&amp;">管道流动的模拟</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">15</td>
+    <td class="style5">杨宛莹</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/fluent2012report/FLUENT%20&amp;">关于身边羽毛球场的思考</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">16</td>
+    <td class="style5">戴琳</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/fluent2012report/&amp;">&quot;迷宫水道&quot;Fluent数值模拟分析报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">17</td>
+    <td class="style5">李栋</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/fluent2012report/FLUENT&amp;">俄亥俄级潜艇小比例模型
+      的FLUENT流场分析
+    及相似律应用</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">18</td>
+    <td class="style5">杨跃</td>
+    <td class="style5">对音爆云的模拟计算</td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">&nbsp;</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5">&nbsp;</td>
+  </tr>
+</table>
+<p class="style5">&nbsp;</p>
+<p class="style4">水火箭作业细则</p>
+<p class="style5">1. 人数：每队一人或者两人。</p>
+<p class="style5">2. 每队制作两枚水火箭，提交一份报告，内容必须包括充气量计算，其他内容自行发挥，但要求报告结构完整，论述严谨。报告内须有队员小幅照片。</p>
+<p class="style5">3. 制作水火箭材料包括饮料瓶，纸、纸壳等纸制品，透明胶带，AB胶，502胶水，泡沫。不许使用其他材料，材料自备。</p>
+<p class="style5">4. 每队配发一只喷嘴，喷嘴和汽水瓶链接。可以使用的汽水瓶见 <a href="http://item.taobao.com/item.htm?spm=a230r.1.10.9.MvL2K9&id=8915114667">http://item.taobao.com/item.htm?spm=a230r.1.10.9.MvL2K9&amp;id=8915114667</a></p>
+<p class="style5">注意不要使用网页中提到的饮料瓶。</p>
+<p class="style5">5. 报名截止时间：2012-11-22日，报名方式：将队员姓名，学号以及队名（酷队名有加分）发送短信给老师</p>
+<p class="style5">6. 火箭发射时间：2012-12-1早晨7：00整 ，地点：西部校区体育场，不报名队伍不给分</p>
+<p class="style5">7. 报告提交时间：2012-12-4，将电子版通过邮件形式寄给老师</p>
+<p class="style5">8. 最大充气压强400kPa（表压）</p>
+<p class="style5">9. 冠军队有奖品</p>
+<p class="style5">参赛队伍</p>
+<table width="439" border="0">
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td width="26" class="style5">&nbsp;</td>
+    <td width="129" class="style5">队名</td>
+    <td width="120" class="style5">成员</td>
+    <td width="76" class="style5">火箭成绩</td>
+    <td width="66" class="style5">&nbsp;</td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">1</td>
+    <td class="style5">Robert Goddard </td>
+    <td class="style5">石拓、董玉峰</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">2</td>
+    <td class="style5">vivi组合</td>
+    <td class="style5">崔伟、马维力</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">3</td>
+    <td class="style5">靓靓滴那个仔</td>
+    <td class="style5">姜人伟、魏晨亮</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">4</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5">王艺霖，王光明</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a>1，<a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告2</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">5</td>
+    <td class="style5"> 神州拾号 </td>
+    <td class="style5">成磊、赵敏</td>
+    <td class="style5">&nbsp;</td>
+    <td width="66" class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">6</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5">杨修铭、王宏亮</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告L</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">7</td>
+    <td class="style5">窜天鑫柯</td>
+    <td class="style5">唐鑫、徐柯</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">8</td>
+    <td class="style5">轩辕箭</td>
+    <td class="style5">白雅蕊、张君茹</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">9</td>
+    <td class="style5">喜迎十八大</td>
+    <td class="style5">李恒阳、戴琳</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">10</td>
+    <td class="style5">鹘鹰 </td>
+    <td class="style5">李渊、林祺亮</td>
+    <td class="style5">&nbsp;</td>
+    <td width="66" class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">11</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5">陈飘游、李剑</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">12</td>
+    <td class="style5">霹天醒目</td>
+    <td class="style5">袁历、刘琛</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">13</td>
+    <td class="style5">地狱火</td>
+    <td class="style5">杨跃、白志同</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">14</td>
+    <td class="style5">Air-explode</td>
+    <td class="style5">任梦柯、冯忠</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">15</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5">王健、宁雷</td>
+    <td class="style5">&nbsp;</td>
+    <td width="66" class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">16</td>
+    <td class="style5">霎云</td>
+    <td class="style5">黄映、罗布旺加</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告L</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">17</td>
+    <td class="style5"><p align="left"> V-65535 </p></td>
+    <td class="style5">倪一文、熊叶越</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">18</td>
+    <td class="style5">告别十七大</td>
+    <td class="style5">李雪琪、潘训岑</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">19</td>
+    <td class="style5">刺翱苍穹</td>
+    <td class="style5">李浩、丁学峰</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">20</td>
+    <td class="style5">双马翔空</td>
+    <td class="style5">马有昕、马翔</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">21</td>
+    <td class="style5">弈羽</td>
+    <td class="style5">赵鹏宇、杨宛莹</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">22</td>
+    <td class="style5">长征X号</td>
+    <td class="style5">李孟容、李崇巍</td>
+    <td class="style5">&nbsp;</td>
+    <td width="66" class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">23</td>
+    <td class="style5">仙箭</td>
+    <td class="style5">邹威任、刘杨</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">24</td>
+    <td class="style5">Starry night </td>
+    <td class="style5">宋海滨、李馨</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="rocketreport2012/Starry&#32;night.pdf">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">25</td>
+    <td class="style5">擎天柱</td>
+    <td class="style5">张勇、王昕炜</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">26</td>
+    <td class="style5">东风</td>
+    <td class="style5">刘子豪、孔皓达</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">27</td>
+    <td class="style5">大空翼</td>
+    <td class="style5">刘胜、贺语</td>
+    <td class="style5">&nbsp;</td>
+    <td width="66" class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">28</td>
+    <td class="style5">EVE</td>
+    <td class="style5">李思潮、马汝坤</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">29</td>
+    <td class="style5">Dream</td>
+    <td class="style5">蔡小康、高振超</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="rocketreport2012/dream.pdf">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">&nbsp;</td>
+    <td class="style8">&nbsp;</td>
+    <td class="style8">李奉遥</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5">&nbsp;</td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">30</td>
+    <td class="style5">风暴之灵</td>
+    <td class="style5">荣达伦、程奇鹏</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">&nbsp;</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style8">张鹏、董荧炯</td>
+    <td class="style5">&nbsp;</td>
+    <td width="66" class="style5">&nbsp;</td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">31</td>
+    <td class="style5"> 五秒真男人 十秒纯爷们 </td>
+    <td class="style5">关平、吴凡</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">32</td>
+    <td class="style5">翻滚吧！旋风冲锋大瓶子！</td>
+    <td class="style5">韩欣伶、桑贤宇</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告L</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">&nbsp;</td>
+    <td class="style8">&nbsp;</td>
+    <td class="style8">李曜晖，刘颖琦 </td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告L</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">33</td>
+    <td class="style5">刻舟求剑</td>
+    <td class="style5">张弛、王安辉</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">34</td>
+    <td class="style5">Flying</td>
+    <td class="style5">佟凯旋、王雨</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">35</td>
+    <td class="style5">流体大炮</td>
+    <td class="style5">孙炳乾、李锦龙</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">36</td>
+    <td class="style5">Cool队</td>
+    <td class="style5">谢新吉、左建业</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">37</td>
+    <td class="style5">流翔</td>
+    <td class="style5">张鸿嘉、徐振力</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">&nbsp;</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style8">张新宇、邹显奇</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告L</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">38</td>
+    <td class="style5">Rockets Go! </td>
+    <td class="style5">汪锐琼、刘立悦</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">39</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5">白镇墉</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/201031057&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">40</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5">李栋、覃谋立</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5"><a href="http://202.118.74.190/~ngao/rocketreport2012/&amp;">报告</a></td>
+  </tr>
+  <tr bordercolor="#666666" bgcolor="#CCFF99">
+    <td class="style5">&nbsp;</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5">&nbsp;</td>
+    <td class="style5">&nbsp;</td>
+  </tr>
+</table>
+<p class="style5">&nbsp;</p>
+</body>
+</html>

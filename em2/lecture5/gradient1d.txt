@@ -1,0 +1,6 @@
+x=[0:0.5:2*pi]';
+u=sin(x);
+v=gradient(u,0.5);
+figure, plot(x,u,'-ob',x,v,'-sr');
+xlabel('x');
+ylabel('u,v');

@@ -1,0 +1,219 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>Fluids</title>
+<style type="text/css">
+<!--
+.style1 {
+	font-family: "Times New Roman", Times, serif;
+	font-size: small;
+}
+.style2 {font-family: "Times New Roman", Times, serif; font-size: 18px; }
+.style3 {font-size: 12px}
+.style5 {font-size: 12; }
+.style7 {font-size: 16px; }
+.style8 {font-family: "Times New Roman", Times, serif; font-size: 16px; }
+.style9 {color: #FF0000; font-weight: bold; }
+.style10 {color: #000000; font-weight: bold; }
+-->
+</style>
+</head>
+
+<body>
+<h1 class="style2"> Advanced fluid mechanics 高等流体力学</h1>
+<p>2012 Fall</p>
+<p>Text: Batchelor, An introduction to fluid dynamics, Cambridge University Press,</p>
+<p> &quot;流体动力学导论(英文影印版),机械工业出版社&quot;， <a href="http://202.118.74.190/~ngao/2012courseupload/&amp;">中译本</a></p>
+<p>考核：40%平时作业+60%期末考试</p>
+<p>参考资料</p>
+<p>1. 	Vectors, Tensors, And The Basic Equations Of Fluid Mechanics - Aris R.djvu</p>
+<p>2. Viscous fluid flow, F. White</p>
+<p>3.流体力学，第二版，周光炯等，高等教育出版社</p>
+<table width="700" border="1">
+  <tr bgcolor="#FFCC66">
+    <td>Lecture</td>
+    <td>Date</td>
+    <td>&nbsp;</td>
+    <td>Assignment</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td width="50">1</td>
+    <td width="69" bgcolor="#FFFFFF">Oct 8 </td>
+    <td width="362" bgcolor="#FFFFFF">Course overview </td>
+    <td width="191" bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td>2</td>
+    <td bgcolor="#FFFFFF">Oct 11 </td>
+    <td bgcolor="#FFFFFF">Tensor notations</td>
+    <td bgcolor="#FFFFFF"><a href="ass2011_a1p1.pdf">作业1assignment1</a>, <a href="homework1.pdf">solutions</a> </td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td>3</td>
+    <td bgcolor="#FFFFFF">Oct 15 </td>
+    <td bgcolor="#FFFFFF">Stress in fluids </td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td>4</td>
+    <td bgcolor="#FFFFFF">Oct 18 </td>
+    <td bgcolor="#FFFFFF">Kinematics 1 , material derivative, mass conservation, stream functions</td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td>5</td>
+    <td bgcolor="#FFFFFF">Oct 22 </td>
+    <td bgcolor="#FFFFFF">Kinematics 2, relative motion near a point </td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td>6</td>
+    <td bgcolor="#FFFFFF">Oct 25 </td>
+    <td bgcolor="#FFFFFF">Kinematics 3, Helmholtz's decomposition </td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td>7</td>
+    <td bgcolor="#FFFFFF">Oct 29 </td>
+    <td bgcolor="#FFFFFF">Kinematics 4, irrotational solenoidal flow </td>
+    <td bgcolor="#FFFFFF"><a href="fluids2011_ass2.pdf">作业2assignment2</a> solution: <a href="ass2011_a2p1.jpg">page1</a>, <a href="ass2011_a2p2.jpg">page2</a></td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td>8</td>
+    <td bgcolor="#FFFFFF">Nov 1 </td>
+    <td bgcolor="#FFFFFF">Equation of motion 1 ,integral form </td>
+    <td bgcolor="#FFFFFF"><a href="fluids2011ass3.pdf">作业3assignment3</a> solution: <a href="ass2011_a3s1.jpg">page1</a>,<a href="ass2011_a3s2.jpg">page2</a>,<a href="ass2011_a3s3.jpg">page3</a> </td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td>9</td>
+    <td bgcolor="#FFFFFF">Nov 5 </td>
+    <td bgcolor="#FFFFFF">Equation of motion 2 ,stress </td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td>10</td>
+    <td bgcolor="#FFFFFF">Nov 8 </td>
+    <td bgcolor="#FFFFFF">Equation of motion 3, energy </td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td>11</td>
+    <td bgcolor="#FFFFFF">Nov 12 </td>
+    <td bgcolor="#FFFFFF">Equation of motion 4, energy 2 </td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td>12</td>
+    <td bgcolor="#FFFFFF">Nov 15 </td>
+    <td bgcolor="#FFFFFF">Summary of chapters 1,2,3;</td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td>13</td>
+    <td bgcolor="#FFFFFF">Nov 19 </td>
+    <td bgcolor="#FFFFFF"> CFD commercial package Fluent demonstration , uniform incompressible visous flow 1, Poiseuille and Couette flow </td>
+    <td bgcolor="#FFFFFF">作业4assignment4, page 178 exercise 2, due Nov 26 </td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td>14</td>
+    <td bgcolor="#FFFFFF">Nov 22 </td>
+    <td bgcolor="#FFFFFF">Uniform incompressible visous flow 2, flow in a tube </td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td>15</td>
+    <td bgcolor="#FFFFFF">Nov 26 </td>
+    <td bgcolor="#FFFFFF">Uniform incompressible visous flow 3, <a href="http://202.118.74.190/~ngao/&amp;">dynamic simularity and Reynolds number </a></td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF">16</td>
+    <td>Nov 29 </td>
+    <td bgcolor="#FFFFFF">Uniform incompressible visous flow 4, lubrication theory, hele-shaw cell and flow in porous media</td>
+    <td>作业5assignment5, page 263, excercises 2,3, due on Dec 6 , <a href="ass5solution.jpg">solutions </a></td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF">17</td>
+    <td>Dec 3 </td>
+    <td bgcolor="#FFFFFF">Vorticity dynamics</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF">18</td>
+    <td>Dec 6 </td>
+    <td bgcolor="#FFFFFF">Laminar boundary layer </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF">19</td>
+    <td>Dec 10 </td>
+    <td>Boundary layer, Blasius solution </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF">20</td>
+    <td>Dec 13 </td>
+    <td>Prof. Wu Chuijie's Seminar on CFD </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF">21</td>
+    <td>Dec 17 </td>
+    <td><a href="http://202.118.74.190/~ngao/&amp;">Flow separation and drag</a>, <a href="Turbulence_L3.ppt">turbulence</a></td>
+    <td><a href="grad_assighment3_2012.pdf">作业6assignment6</a>, solutions <a href="2012courseupload/assignment6.pdf">1, </a><a href="2012courseupload/assignment6a.pdf">2,</a><a href="2012courseupload/assignment6b.pdf"> 3, </a><a href="2012courseupload/assignment6c.pdf">4,</a><a href="2012courseupload/assignment6d.pdf"> 5</a></td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF">22</td>
+    <td>Dec 20 </td>
+    <td>Inviscid flow theory background</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF">23</td>
+    <td>Dec 24 </td>
+    <td>Potential flow</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF">24</td>
+    <td>Dec 27 </td>
+    <td><a href="2012fluids_lastlecture.ppt">Course review</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td><a href="2012courseupload/Guidelines&#32;for&#32;the&#32;final&#32;exams.pdf">期末复习指南 Guideline for the finals </a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF">&nbsp;</td>
+    <td>Jan 13 </td>
+    <td><span style="COLOR: #0000ff">期末考试时间 </span>：1月13日 3-4节 地点：<span style="COLOR: #0000ff">研教楼 研104</span></td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<table width="300" border="0">
+  <tr>
+    <td><a href="2012courseupload/IMG_8368.JPG"><img src="2012courseupload/IMG_8368_resize.JPG" width="168" height="112" border="0"></a></td>
+    <td><a href="2012courseupload/IMG_8369.JPG"><img src="2012courseupload/IMG_8369_resize.JPG" width="168" height="112" border="0"></a></td>
+    <td><a href="2012courseupload/IMG_8370.JPG"><img src="2012courseupload/IMG_8370_resize.JPG" width="168" height="112" border="0"></a></td>
+  </tr>
+  <tr>
+    <td><a href="2012courseupload/IMG_8371.JPG"><img src="2012courseupload/IMG_8371_resize.JPG" width="168" height="112" border="0"></a></td>
+    <td><a href="2012courseupload/IMG_8372.JPG"><img src="2012courseupload/IMG_8372_resize.JPG" width="168" height="112" border="0"></a></td>
+    <td><a href="2012courseupload/IMG_8373.JPG"><img src="2012courseupload/IMG_8373_resize.JPG" width="168" height="112" border="0"></a></td>
+  </tr>
+  <tr>
+    <td><a href="2012courseupload/IMG_8367.JPG"><img src="2012courseupload/IMG_8367_resize.JPG" width="168" height="112" border="0"></a></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp; </p>
+</body>
+</html>

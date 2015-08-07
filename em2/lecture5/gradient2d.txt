@@ -1,0 +1,15 @@
+x=[0:0.5:2*pi]';
+y=x;
+
+u=sin(x);
+v=cos(x);
+v=v';
+U=u*v;
+figure, contourf(x,y,U); colorbar
+xlabel('x');
+ylabel('y');
+
+[gx,gy]=gradient(U,0.5,0.5);
+figure, quiver(x,y,gx,gy);
+xlabel('x');
+ylabel('y');

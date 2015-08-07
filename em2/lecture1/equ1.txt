@@ -1,0 +1,23 @@
+% simple program compute
+%  du/dx=p*u+q*x
+%
+
+p=-0.1;
+q=30;
+N=100; % 100 years
+dx=1;  % 1 year
+%price=zeros(N,1);
+
+u(1)=2000;  % boundary condition, price of the starting year 2000 yuan/m^2
+x(1)=0;
+for i=1:N
+    x(i+1)=x(i)+dx;
+    du=( p*u(i)+q*x(i) )*dx;
+    u(i+1)=u(i)+du;
+end
+
+figure, plot(x,u,'o-')
+xlabel('years from now')
+ylabel('price, yuan/m^2')
+
+

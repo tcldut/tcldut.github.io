@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>Fluids</title>
+<style type="text/css">
+<!--
+.style1 {
+	font-family: "Times New Roman", Times, serif;
+	font-size: small;
+}
+.style2 {font-family: "Times New Roman", Times, serif; font-size: 18px; }
+.style3 {font-size: 12px}
+.style5 {font-size: 12; }
+.style7 {font-size: 16px; }
+.style8 {font-family: "Times New Roman", Times, serif; font-size: 16px; }
+.style9 {color: #FF0000; font-weight: bold; }
+.style10 {color: #000000; font-weight: bold; }
+-->
+</style>
+</head>
+
+<body>
+<h1 class="style2"> 高等流体力学Advanced fluid mechanics </h1>
+<p>2014 Fall</p>
+<p>课本Text</p>
+<p>R. Panton, Incompressible Flow, John Wiley &amp; Sons, 2005,<a href="http://www.amazon.cn/Incompressible-Flow-Ronald-L-Panton/dp/047126122X"> Amazon.cn</a> ,</p>
+<p>参考资料</p>
+<p>1. 吴望一，流体力学，北京大学出版社 1982 </p>
+<p>2. Batchelor, An introduction to fluid dynamics, Cambridge University Press,</p>
+<p>3. 流体力学，第二版，周光炯等，高等教育出版社</p>
+<p>4. Viscous fluid flow, F. White</p>
+<p>&nbsp;</p>
+<table width="700" border="1">
+  <tr bgcolor="#FFCC66">
+    <td>Lecture</td>
+    <td>Date</td>
+    <td>&nbsp;</td>
+    <td>Assignment</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td width="51">1</td>
+    <td width="68" bgcolor="#FFFFFF">Sep 16</td>
+    <td width="362" bgcolor="#FFFFFF">Course overview <a href="grad2014/lecture1_2014.ppt">PPT</a> </td>
+    <td width="191" bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td>2</td>
+    <td bgcolor="#FFFFFF">Sep 18</td>
+    <td bgcolor="#FFFFFF">Tensor notation (chap. 3) </td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td>3</td>
+    <td bgcolor="#FFFFFF">Sep 23</td>
+    <td bgcolor="#FFFFFF">Material derivative, decomposition of relative velocity (4.1-4.5) </td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td>4</td>
+    <td bgcolor="#FFFFFF">Sep 25</td>
+    <td bgcolor="#FFFFFF">Continuity, momentum equation, surface forces (5.1-5.6) </td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td>5</td>
+    <td bgcolor="#FFFFFF">Sep 29</td>
+    <td bgcolor="#FFFFFF">Differential momentum equation, energy equation (5.7-5.10) </td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td>6</td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+    <td bgcolor="#FFFFFF">Integral form of equations (5.13-5.16) </td>
+    <td bgcolor="#FFFFFF">5.8, 5.22 , 5.23 </td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td>7</td>
+    <td width="68" bgcolor="#FFFFFF">&nbsp;</td>
+    <td bgcolor="#FFFFFF">Navier-stoke equation (chap. 6) </td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td>8</td>
+    <td bgcolor="#FFFFFF">Oct 16 </td>
+    <td bgcolor="#FFFFFF">Numerical solution of NS equation, introduction of commercial CFD softwares</td>
+    <td bgcolor="#FFFFFF"><a href="grad2014/CFD-intro-2014.ppt">PPT</a></td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td>9</td>
+    <td bgcolor="#FFFFFF">Oct. 21 </td>
+    <td bgcolor="#FFFFFF">Analytical solutions of NS equation (7.1-7.5) </td>
+    <td bgcolor="#FFFFFF">7.1, 7.9 </td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td>10</td>
+    <td bgcolor="#FFFFFF">Oct 23 </td>
+    <td bgcolor="#FFFFFF">Dimensional analysis (chap. 8) </td>
+    <td bgcolor="#FFFFFF"><a href="http://202.118.74.190/~ngao/grad2014/&amp;">PPT</a> 8.8, 8.16 </td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td>11</td>
+    <td bgcolor="#FFFFFF">Oct.28</td>
+    <td bgcolor="#FFFFFF">chap 12, streamfunctions and velocity potentials</td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td>12</td>
+    <td bgcolor="#FFFFFF">Oct.30 </td>
+    <td bgcolor="#FFFFFF">chap 13, vorticity </td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td>13</td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+    <td bgcolor="#FFFFFF">chap 13, Helmholtz's law, Kelvin's thereom </td>
+    <td bgcolor="#FFFFFF"><a href="Vorticity_Part_1.rm">video</a>, <a href="grad2014/vortex.ppt">slides </a></td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td>14</td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+    <td bgcolor="#FFFFFF">Chap 14, flow with moderate Reynolds number </td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td>15</td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr bgcolor="#00FFFF">
+    <td>16</td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF">17</td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF">18</td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+    <td bgcolor="#FFFFFF">Kinematic decomposition of flow field (chap. 17) </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF">19</td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+    <td bgcolor="#FFFFFF">Ideal flow in a plane 1 (chap 18) </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF">20</td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+    <td bgcolor="#FFFFFF">Ideal flow in a plane 2 </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF">21</td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+    <td bgcolor="#FFFFFF">Ideal flow in a plane 3 (<a href="grad2014/potential_flow.ppt">PPT</a>) </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF">22</td>
+    <td>&nbsp;</td>
+    <td bgcolor="#FFFFFF">Boundary layer (<a href="http://202.118.74.190/~ngao/grad2014/&amp;">PPT</a>) </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF">23</td>
+    <td>&nbsp;</td>
+    <td bgcolor="#FFFFFF">Turbulence (<a href="http://202.118.74.190/~ngao/grad2014/&amp;">PPT</a>) </td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF">24</td>
+    <td>&nbsp;</td>
+    <td bgcolor="#FFFFFF">Review (<a href="grad2014/2014fluids_lastlecture.ppt">PPT</a>) ,<a href="http://202.118.74.190/~ngao/grad2014/&amp;">以往试题</a></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td bgcolor="#FFFFFF">&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td bgcolor="#00FFFF">&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<p>&nbsp; </p>
+</body>
+</html>

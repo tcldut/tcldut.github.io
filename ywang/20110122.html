@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- DW6 -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>Turbulence Control Lab, DUT</title>
+<link rel="stylesheet" href="2col_leftNav.css" type="text/css">
+<style type="text/css">
+<!--
+.style1 {font-size: x-large}
+.style3 {font-size: xx-large}
+.style4 {font-size: xx-large; font-weight: bold; }
+-->
+</style>
+</head>
+<!-- The structure of this file is exactly the same as 2col_rightNav.html;
+     the only difference between the two is the stylesheet they use -->
+<body> 
+<div id="masthead"> 
+  <h1 class="style1" id="siteName">新型飞行器第一战场/**************************************/单翼天使1号beta</h1> 
+  <div id="globalNav">    </div> 
+</div> 
+<div id="content"> 
+  <h2 id="pageName">&nbsp;</h2> 
+ 
+   <p>&nbsp;</p>
+   <h1 class="style1">2011年01月22日</h1>
+   <h2> 这是第一次写项目日志，鉴于每个项目日志的开头都是大谈阔论一番，极尽引经据典所能是。我们项目组不敢苟同，只要把项目的点点滴滴记录下来，能供大家监督，供大家互相讨论，这样就很好。而这个项目日志的网站建设更大的意义在于能给后来者留下一些经验。或许他们看了这个项目日志后会尊称我们是前辈抑或是师兄，或许他们看后会嗤之以鼻，没等他们到来，这个项目已经支离破碎，一败涂地。<br>
+   然记录下来总归是好的，成功，可以留下来这点点滴滴，供后来人参考；失败，也能时时到这个主页来看审视自己在项目上的失败和懈怠。不管怎样，这个网站仅仅是项目进展抑或是心路历程的一个记录平台。<br> 
+   请大家多多监督，有什么意见，我们都会洗耳恭听的。</h2>
+   <p>邮箱：</p>
+   <p>高老师：<FONT size=2 face=宋体><SPAN style="FONT-FAMILY: 宋体; FONT-SIZE: 10.5pt" 
+lang=EN-US>gaonan(AT)dlut.edu.cn<o:p></o:p></SPAN></FONT></p>
+   <p> 王同学：yujiaoyujiao.wang（AT）qq.com </p>
+   <p>&nbsp;</p>
+   <p>今日进展：</p>
+   <p> 模型已经可以基本上稳定悬浮不动了，当然我设置的死区在-4度到+4度之间，不知道精度算不算超纲，但也管不了那么多了，先好用再说。</p>
+   <p>响应速度： 模型大概在震荡6到8次之间就可以趋于稳定了。从最差状态（贴限位挡杆）到稳定大概需要7秒左右，我想这是没有用PID的后果，但是具体这种状况该怎么加PID，加上之后会不会更糟，还有待实验。</p>
+   <p>模型的风扇响应速度还是不尽如人意，惯性太大，我就是恨没法给他加负电压让他迅速停下来。电调还是挺给力的，被我暴力插拔了这么多遍依然很坚挺! 一分钱一分货吧</p>
+   <p>今天没有相机或者是摄像机，没法把这个运行状况录制下来，等高老师来了再录给补上。</p>
+   <p>附件 </p>
+   <p class="style3"><a href="doc/Vertical_Fly_2011_01_22.rar">Vertical_Fly_2011_01_22<img src="http://202.118.74.190/~ngao/ywang/pic/&amp;" width="59" height="52"></a><img src="pic/about.jpg" width="425" height="300"></p>
+   <p class="style3">晚上6点更新：</p>
+   <p class="style3">程序加了PID，虽然参数很难调节，但是现在的确是比原来的程序（上面个<a href="doc/Vertical_Fly_2011_01_22.rar">Vertical_Fly_2011_01_22</a>）要稳定多了，而且有望能达到更好的平衡。</p>
+   <p class="style3">响应速度： 从最坏状态到稳定大概震荡个2到3次就可以趋于稳定了，然后主推力风扇逐级加速后仍能够在最多5次震荡后趋于稳定，但美中不足是震荡的幅度有点大，我想应该是P的参数给的大了</p>
+   <p class="style3"> 明天再调调吧，今天是不行了，本来屋里的冷空气已经渗透全身了，加上刚才那一阵风吹的，待会要感冒了，草草写完这个进度报告，速速背上书包吃饭去了。</p>
+   <p class="style3">PS: <strong>自动控制原理的课还是应该好好上的，建议外系学生可以去旁听</strong></p>
+   <p class="style4">附件程序：</p>
+   <p class="style4"><span class="style3"><a href="doc/Vertical_Fly_2011_01_22_new.rar">Vertical_Fly_2011_01_22<img src="http://202.118.74.190/~ngao/ywang/pic/&amp;" width="59" height="52"></a></span></p>
+   <p class="style3">&nbsp;</p>
+   <p class="style3">&nbsp;</p>
+   <p>&nbsp;</p>
+</div> 
+<!--end content --> 
+<div id="navBar"> 
+  <div id="search"> 
+    <form action="20110122.html#"> 
+      <label></label>
+    </form> 
+  </div> 
+  <div id="sectionLinks"> 
+    <ul> 
+      <li><a href="index.html">主页 Home </a></li>
+      <li><a href="http://202.118.74.190/~ngao/ywang/update.htm"><strong>项目日志 Update</strong></a></li>
+      <li><a href="links.htm">链接 Links </a></li>
+    </ul> 
+  </div> 
+  <div class="relatedLinks"> 
+    <h3>&nbsp;</h3> 
+    <ul>
+      <li> </li>
+    </ul>
+  </div> 
+  <div id="headlines">
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </div> 
+</div> 
+<!--end navbar --> 
+<div id="siteInfo"> <a href="mailto:gaonan@dlut.edu.cn">Contact Us</a> | &copy;2011
+大工航院</div> 
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=5490447; 
+var sc_invisible=0; 
+var sc_partition=60; 
+var sc_click_stat=1; 
+var sc_security="1c738e17"; 
+</script>
+
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter.js"></script><noscript><div
+class="statcounter">
+  <!-- End of StatCounter Code -->
+
+
+<br> 
+</body>
+</html>

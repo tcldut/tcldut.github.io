@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- DW6 -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>Turbulence Control Lab, DUT</title>
+<link rel="stylesheet" href="2col_leftNav.css" type="text/css">
+<style type="text/css">
+<!--
+.style1 {font-size: x-large}
+.style3 {font-size: xx-large}
+.style4 {font-size: xx-large; font-weight: bold; }
+-->
+</style>
+</head>
+<!-- The structure of this file is exactly the same as 2col_rightNav.html;
+     the only difference between the two is the stylesheet they use -->
+<body> 
+<div id="masthead"> 
+  <h1 class="style1" id="siteName">新型飞行器第一战场/**************************************/单翼天使1号beta</h1> 
+  <div id="globalNav">    </div> 
+</div> 
+<div id="content"> 
+  <h2 id="pageName">&nbsp;</h2> 
+ 
+   <p>&nbsp;</p>
+   <h1 class="style1">2011年01月23日</h1>
+   <h2>&nbsp;</h2>
+   <p>今天从早晨八点半开始调试，加上做了一些机械加工的活，也算是忙忙叨叨的弄到下午三点，竟还不觉得饿。看来是快达到忘我的境界了。</p>
+   <p>今天依然是调试飞行器的稳定情况，但是今天可以小刻度的来用电脑手动调节主推动力的运行速度了。最小刻度是占空比增加或减小5微秒。</p>
+   <p>悲剧的是调着调着就没有电了，所以给电池充电，电池充电真是一个漫长的过程，充了将近四个点才把电池充满，看来买备用电池还是必须的。幸好Professor Gao 早有准备，已经预定好了电池。</p>
+   <p>并且录制了一段飞行器在实验台上的飞行试验视频，待会传到网上可以供大家来检查毛病。</p>
+   <p>录像链接：<A href="http://www.tudou.com/programs/view/oK7jbBh21f8/" 
+target=_blank>http://www.t<WBR>udou.com/pro<WBR>grams/view/o<WBR>K7jbBh21f8/</A></p>
+   <p>今天程序又有了新的改动，现在附程序如下</p>
+   <p><a href="doc/Vertical_Fly_2011_01_23.rar">Vertical_Fly_2011_01_23<img src="http://202.118.74.190/~ngao/ywang/pic/&amp;" width="33" height="33"></a></p>
+   <p class="style3">&nbsp;<img src="pic/logo.png" width="507" height="291"></p>
+   <p class="style3">主要程序代码如下：</p>
+   <p class="style3">void Speed()<br>
+   {</p>
+   <p>if(speed_key)<br>
+     {<br>
+  speed_key=0;<br>
+  speed_key2++;<br>
+  X_deg_sum+=X_deg;<br>
+  }<br>
+  if(speed_key2&gt;39)<br>
+  {<br>
+  speed_key2=0;<br>
+  X_deg=X_deg_sum;<br>
+  X_deg_sum=0;<br>
+  speed_dnum=0;<br>
+  error1=X_deg-X_deg_Set;<br>
+  if(error2!=0)<br>
+  derror=error1-error2;<br>
+  else derror=0;<br>
+  error2=error1;<br>
+  if(abs(error1)&lt;200)<br>
+  {<br>
+  if(abs(error1)&lt;100)<br>
+  {error2=0;<br>
+  return;<br>
+  }</p>
+   <p>}<br>
+     else<br>
+     {<br>
+  speed_dnum=error1/160+derror/120;/*+Ki*derror;*/<br>
+  }<br>
+  if(speed_dnum&gt;30) speed_dnum=30;<br>
+  if(speed_dnum&lt;-30) speed_dnum=-30;</p>
+   <p> speed_num+=speed_dnum;<br>
+  if(speed_num&lt;1250) speed_num=1250;<br>
+  if(speed_num&gt;1900) speed_num=1900;<br>
+  motor1.writeMicroseconds(speed_num); //1140us to 1920us<br>
+  Serial.print('!');<br>
+  Serial.print(X_deg);<br>
+  Serial.print(',');<br>
+  Serial.print(Y_deg);<br>
+  Serial.print(',');<br>
+  Serial.print(Z_deg);<br>
+  Serial.print(',');<br>
+  Serial.print(speed_num);<br>
+  Serial.print(',');<br>
+  Serial.print(speed_dnum);<br>
+  Serial.println();<br>
+  }</p>
+   更多精彩将会继续更新。
+   <p>&nbsp;</p>
+</div> 
+<!--end content --> 
+<div id="navBar"> 
+  <div id="search"> 
+    <form action="20110123.html#"> 
+      <label></label>
+    </form> 
+  </div> 
+  <div id="sectionLinks"> 
+    <ul> 
+      <li><a href="index.html">主页 Home </a></li>
+      <li><a href="http://202.118.74.190/~ngao/ywang/update.htm"><strong>项目日志 Update</strong></a></li>
+      <li><a href="links.htm">链接 Links </a></li>
+    </ul> 
+  </div> 
+  <div class="relatedLinks"> 
+    <h3>&nbsp;</h3> 
+    <ul>
+      <li> </li>
+    </ul>
+  </div> 
+  <div id="headlines">
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+  </div> 
+</div> 
+<!--end navbar --> 
+<div id="siteInfo"> <a href="mailto:gaonan@dlut.edu.cn">Contact Us</a> | &copy;2011
+大工航院</div> 
+
+<!-- Start of StatCounter Code -->
+<script type="text/javascript">
+var sc_project=5490447; 
+var sc_invisible=0; 
+var sc_partition=60; 
+var sc_click_stat=1; 
+var sc_security="1c738e17"; 
+</script>
+
+<script type="text/javascript"
+src="http://www.statcounter.com/counter/counter.js"></script><noscript><div
+class="statcounter">
+  <!-- End of StatCounter Code -->
+
+
+<br> 
+</body>
+</html>

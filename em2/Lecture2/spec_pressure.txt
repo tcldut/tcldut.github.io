@@ -1,0 +1,39 @@
+warning off
+cord=load('mean_velocity.txt');
+
+te=load('readme.txt');
+sample_f=te(1); %sample frequency
+sample_nums=te(2); %sample number
+blocks=te(3); %data points
+points=te(4); %data points
+
+T=sample_nums/sample_f;
+df=1/T;
+f=[0:df:sample_f/2]';
+    
+    spec2=zeros(sample_nums/2+1,1);
+
+        p1=load('p14c0.dat');
+        p1=double(p1);
+        
+        figure, plot(p1(:,10));
+
+        for j=1:blocks
+               p1j=p1(:,j);%p2j=p2(:,j);
+               p1j=p1j-mean(p1j);%p2j=p2j-mean(p2j);
+               s1j=fft(p1j);%s2j=fft(p2j);
+               spect=(s1j.*conj(s1j))/sample_nums^2;
+               spec0=spect(1:sample_nums/2+1)*2;
+               spec0(1)=spec0(1)/2;   
+               spec0(sample_nums/2+1)=spec0(sample_nums/2+1)/2;
+               spec2=spec2+spec0;
+%               R00=xcorr(p1j,p1j)/sqrt(max(xcorr(p1j)))/sqrt(max(xcorr(p1j))); %used time series
+%               R00c(:,whichprobe)=R00c(:,whichprobe)+R00;
+        end
+            
+            spec2=spec2/blocks;
+        
+
+figure,loglog(f,spec2)%(:,1),f1,spec2(:,2),f1,spec2(:,7),f1,spec2(:,9),f1,spec2(:,12),f1,spec2(:,14),f1,spec2(:,16));legend('1','4','7','9','12','14',0)
+
+
